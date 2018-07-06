@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './switch.css'
 
 
 
@@ -11,17 +12,17 @@ class SwitchButton extends Component {
 
   render() {
     const {
-      theme: { name },
+      theme: { name ,textPrimary, },
       switchTheme
     } = this.context;
 
   
     return (
-      
-        <div className="size pa4" onClick={(e) => switchTheme()}>
-          <button className="f6 link dim ba ph3 pv2 mb2 dib dark-pink" href="#" />
-          <div >{name}</div>
+     
+        <div className="pa4 grow" >
+          <div className="f4 i b baskerville  poi"style={{color:textPrimary}} onClick={(e) => switchTheme()}>{name}</div>
         </div>
+      
         
     );
   }

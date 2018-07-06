@@ -4,8 +4,9 @@ import Searchbox from '../components/Searchbox';
 import Scroll from '../components/scroll';
 import ThemeSwitcher from '../components/AllAboutThemes/ThemeSwitcher';
 import SwitchButton from '../components/AllAboutThemes/switchThemeButton';
+import PropTypes from 'prop-types';
+import Title from '../components/title';
 
-import './App.css';
 
 
 
@@ -16,7 +17,7 @@ class App extends Component{
 				robots : [],
 	            searchfield : '',
 		}
-		console.log('first')
+	
 	}
 	componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users')
@@ -30,7 +31,6 @@ class App extends Component{
 	}
 
 	render(){
-		console.log("third");
 		const filterRobots =this.state.robots.filter(robots=>{
 			return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
 		});
@@ -40,7 +40,7 @@ class App extends Component{
         return(
         <ThemeSwitcher>	
 		<div className ='tc'>
-		<h1 className='f2 abc'>Robo friends</h1>
+		<Title />
 		<SwitchButton/>
 		<Searchbox searchChange ={this.onSearchChange}/>
 		<Scroll>

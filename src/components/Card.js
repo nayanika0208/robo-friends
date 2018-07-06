@@ -7,7 +7,7 @@ const Card =(props,context) =>{
 	return (
      <div className=" tc  dib ma2 pa3 br3 grow bw2 shadow" style={{backgroundColor:colorHighlight}}>
      <img alt= 'robo 1 'src={ `https://robohash.org/${id}?200x200`}/>
-     <div>
+     <div style={{color:textPrimary}}>
     <h1>{name}</h1>
     <p>{email}</p>
 

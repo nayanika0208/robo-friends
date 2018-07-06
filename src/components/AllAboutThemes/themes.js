@@ -14,7 +14,7 @@ const themes = [
     colorPrimary: '#3dc0b0',
     gradientColor: 'linear-gradient(to left,#ee9ca7,#ffdde1)',
     colorHighlight: '#F8DCF8',
-    textPrimary: '#202121',
+    textPrimary: '#DB5391',
     navAlpha: 'rgba(250, 250, 250, 0.75)'
   },
   {
@@ -30,7 +30,7 @@ const themes = [
     colorPrimary: '#FAFAFA',
     gradientColor: 'linear-gradient(to left,#C6FFDD,#FBD786,#f7797d)',
     colorHighlight: '#C6FFDD',
-    textPrimary: '#FAFAFA',
+    textPrimary: '#f7797d',
     navAlpha: 'rgba(61, 192, 176, 0.75)'
   },
   {
@@ -38,7 +38,7 @@ const themes = [
     colorPrimary: '#A26836',
     gradientColor: 'linear-gradient(to left,#2980B9,#6DD5FA,#FFFFFF)',
     colorHighlight: '#77BEC5',
-    textPrimary: '#202121',
+    textPrimary: '#3063A0',
     navAlpha: 'rgba(250, 250, 250, 0.75)'
   },
   {
@@ -46,7 +46,7 @@ const themes = [
     colorPrimary: '#e64f52',
     gradientColor: 'linear-gradient(to left,#eacda3,#d6ae7b)',
     colorHighlight: '#FFEFE2',
-    textPrimary: '#202121',
+    textPrimary: '#CA752E',
     navAlpha: 'rgba(250, 250, 250, 0.75)'
   },
   {
@@ -54,7 +54,7 @@ const themes = [
     colorPrimary: '#af3d4e',
     gradientColor: 'linear-gradient(to left,#7F7FD5,#86A8E7,#91EAE4)',
     colorHighlight: '#91EAE4',
-    textPrimary: '#202121',
+    textPrimary: '#4B136A',
     navAlpha: 'rgba(250, 250, 250, 0.75)'
   },
   {
@@ -78,7 +78,7 @@ const themes = [
     colorPrimary: '#00BCD4',
     gradientColor: 'linear-gradient(to left,#c2e59c,#64b3f4)',
     colorHighlight: '#B3CEDA',
-    textPrimary: '#212121',
+    textPrimary: '#2A4687',
     navAlpha: 'rgba(255, 255, 255, 0.75)'
   },
   {
@@ -86,7 +86,7 @@ const themes = [
     colorPrimary: '#845c4e',
     gradientColor: 'linear-gradient(to left,#a8ff78,#78ffd6)',
     colorHighlight: '#A9EB7B',
-    textPrimary: '#212121',
+    textPrimary: '#0A510A',
     navAlpha: 'rgba(255, 255, 255, 0.75)'
   },
   {
@@ -95,14 +95,14 @@ const themes = [
     colorPrimary: '#607D8B',
     gradientColor: 'linear-gradient(to left,#f05053,#e1eec3)',
     colorHighlight: '#EDD3B9',
-    textPrimary: '#212121',
+    textPrimary: '#f05053',
     navAlpha: 'rgba(255, 255, 255, 0.75)'
   },
   {
     name: 'oceanView',
     colorPrimary: '#FFFFFF',
     gradientColor: 'linear-gradient(to left,#a8c0ff,#3f2b96)',
-    colorHighlight: '#B9E9B7',
+    colorHighlight: '#a8c0ff',
     textPrimary: '#FAFAFA',
     navAlpha: 'rgba(69, 90, 100, 0.75)'
   }
