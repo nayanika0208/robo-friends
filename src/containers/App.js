@@ -1,4 +1,5 @@
 import React , {Component }from 'react';
+import {connect} from 'react-redux';
 import Cardlist from '../components/Cardlist';
 import Searchbox from '../components/Searchbox';
 import Scroll from '../components/scroll';
@@ -6,45 +7,60 @@ import ThemeSwitcher from '../components/AllAboutThemes/ThemeSwitcher';
 import SwitchButton from '../components/AllAboutThemes/switchThemeButton';
 import PropTypes from 'prop-types';
 import Title from '../components/title';
+import ErrorBoundary from '../components/ErrorBoundry';
+import {setSearchField,requestRobots} from '../actions.js';
 
-
-
+const mapStateToProps=(state)=>{
+	return {
+		searchfield:state.searchRobots.searchfield,
+		robots:state.requestRobots.robots,
+		isPending:state.requestRobots.isPending,
+		error:state.requestRobots.error,
+	}
+}
+const mapDispatchToProps=(dispatch)=>{
+	return{
+	onSearchChange:(event)=>dispatch(setSearchField(event.target.value)),
+	onRequestRobots:()=>requestRobots(dispatch),
+}
+}
 
 class App extends Component{
 	constructor(){
 		super()
 		this.state={
-				robots : [],
-	            searchfield : '',
+
+
 		}
-	
+
 	}
 	componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response=> response.json())
-      .then(users => {this.setState({ robots: users})});
+
+		    this.props.onRequestRobots();
+    // fetch('https://jsonplaceholder.typicode.com/users')
+    //   .then(response=> response.json())
+    //   .then(users => {this.setState({ robots: users})});
   }
 
-	onSearchChange=(event)=>{
-		this.setState({searchfield: event.target.value})
-
-	}
 
 	render(){
-		const filterRobots =this.state.robots.filter(robots=>{
-			return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+		const {searchfield,onSearchChange,robots,isPending} =this.props;
+		const filterRobots =robots.filter(robots=>{
+			return robots.name.toLowerCase().includes(searchfield.toLowerCase())
 		});
-		if(this.state.robots.length === 0){
+		if(isPending){
 			return <h1 className='abc'>loading </h1> }
 			else {
         return(
-        <ThemeSwitcher>	
+        <ThemeSwitcher>
 		<div className ='tc'>
 		<Title />
 		<SwitchButton/>
-		<Searchbox searchChange ={this.onSearchChange}/>
+		<Searchbox searchChange ={onSearchChange}/>
 		<Scroll>
+			<ErrorBoundary>
 		  <Cardlist  robots ={filterRobots}/>
+		</ErrorBoundary>
 		</Scroll>
 		</div>
 		</ThemeSwitcher>
@@ -55,4 +71,4 @@ class App extends Component{
 
 }
 
-export default App;
+export default connect(mapStateToProps,mapDispatchToProps)(App);
